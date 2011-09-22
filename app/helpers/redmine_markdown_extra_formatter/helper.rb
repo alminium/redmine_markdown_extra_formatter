@@ -20,10 +20,9 @@ module RedmineMarkdownExtraFormatter
       unless @heads_for_wiki_formatter_included
         content_for :header_tags do
           javascript_include_tag('jstoolbar/jstoolbar') +
-          javascript_include_tag('markdown_extra', :plugin => 'redmine_markdown_extra_formatter') +          
+          javascript_include_tag('jstoolbar/markdown_extra', :plugin => 'redmine_markdown_extra_formatter') +          
           javascript_include_tag("jstoolbar/lang/jstoolbar-#{current_language}") +
-          stylesheet_link_tag('jstoolbar') +
-          stylesheet_link_tag('markdown_extra', :plugin => 'redmine_markdown_extra_formatter')
+          stylesheet_link_tag('jstoolbar')
         end
         @heads_for_wiki_formatter_included = true
       end
