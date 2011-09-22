@@ -54,9 +54,9 @@ jsToolBar.prototype.elements.h1 = {
 	title: 'Heading 1',
 	fn: {
 		wiki: function() { 
-		  this.encloseLineSelection('# ', ' #',function(str) {
-		    str = str.replace(/^\s*#+\s*/, '')
-		    str = str.replace(/\s*#+\s*$/, '')
+		  this.encloseLineSelection('', '\n==============================',function(str) {
+//		    str = str.replace(/^\s*#+\s*/, '')
+		    str = str.replace(/\n==============================$/, '')
 		    return str;
 		  });
 		}
@@ -67,9 +67,9 @@ jsToolBar.prototype.elements.h2 = {
 	title: 'Heading 2',
 	fn: {
 		wiki: function() { 
-		  this.encloseLineSelection('## ', ' ##',function(str) {
-		    str = str.replace(/^\s*#+\s*/, '')
-		    str = str.replace(/\s*#+\s*$/, '')
+		  this.encloseLineSelection('', ' \n-------------------------',function(str) {
+//		    str = str.replace(/^\s*#+\s*/, '')
+		    str = str.replace(/\n------------------------------$/, '')
 		    return str;
 		  });
 		}
@@ -80,7 +80,7 @@ jsToolBar.prototype.elements.h3 = {
 	title: 'Heading 3',
 	fn: {
 		wiki: function() { 
-		  this.encloseLineSelection('### ', ' ###',function(str) {
+		  this.encloseLineSelection('### ', '',function(str) {
 		    str = str.replace(/^\s*#+\s*/, '')
 		    str = str.replace(/\s*#+\s*$/, '')
 		    return str;
