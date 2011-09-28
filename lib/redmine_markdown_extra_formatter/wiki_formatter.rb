@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-require 'bluefeather'
+require 'bluecloth'
 require 'coderay'
 
 module BlueFeather
@@ -135,7 +135,7 @@ module RedmineMarkdownExtraFormatter
       parsedText = @text.dup
       parsedText.gsub!("\r\n", "\n")
       parsedText = gfm(parsedText)
-      parsedText = BlueFeather.parse(parsedText)
+      parsedText = BlueCloth.new(parsedText).to_html
       parsedText = inline_auto_link(parsedText)
       parsedText = inline_auto_mailto(parsedText)
       parsedText = syntax_highlight(parsedText)
